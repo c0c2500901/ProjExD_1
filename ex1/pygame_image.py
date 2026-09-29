@@ -32,14 +32,18 @@ def main():
         vy = 0
 
         if key_lst[pg.K_UP]:
-            kk_rct.move_ip(0, -1)
-        if key_lst[pg.K_DOWN]:
-            kk_rct.move_ip(0, +1)
-        if key_lst[pg.K_LEFT]:
-            kk_rct.move_ip(-1, 0)
-        if key_lst[pg.K_RIGHT]:
-            kk_rct.move_ip(+1, 0)
+            vy = -1
 
+        if key_lst[pg.K_DOWN]:
+            vy = 1
+
+        if key_lst[pg.K_RIGHT]:
+            vx = 1
+
+        if key_lst[pg.K_LEFT]:
+            vx = -1
+
+        kk_rct.move_ip(vx, vy)
 
         x = tmr % 3200
 
