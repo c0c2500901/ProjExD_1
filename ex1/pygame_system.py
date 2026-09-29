@@ -19,7 +19,7 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-        
+
         txt = font.render(str(tmr), True, (255, 255, 255))
         screen.fill((50, 50, 50))
         screen.blit(txt, [300, 200])
@@ -27,10 +27,10 @@ def main():
         pg.display.update()
         tmr += 1        
         clock.tick(1)
+        clock.tick(0.1)
 
 
 if __name__ == "__main__":
     pg.init()
     main()
     pg.quit()
-    sys.exit()
