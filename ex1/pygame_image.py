@@ -10,7 +10,7 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock = pg.time.Clock()
 
-    bg_img = pg.image.load("fig/pg_bg.jpg")
+    bg_img = pg.image("fig/pg_bg.jpg")
     bg_img2 = pg.transform.flip(bg_img, True, False)
 
     kk_img = pg.image.load("fig/3.png")
@@ -32,18 +32,14 @@ def main():
         vy = 0
 
         if key_lst[pg.K_UP]:
-            vy = -1
-
+            kk_rct.move_ip(0, -1)
         if key_lst[pg.K_DOWN]:
-            vy = 1
-
-        if key_lst[pg.K_RIGHT]:
-            vx = 1
-
+            kk_rct.move_ip(0, +1)
         if key_lst[pg.K_LEFT]:
-            vx = -1
+            kk_rct.move_ip(-1, 0)
+        if key_lst[pg.K_RIGHT]:
+            kk_rct.move_ip(+1, 0)
 
-        kk_rct.move_ip(vx, vy)
 
         x = tmr % 3200
 
