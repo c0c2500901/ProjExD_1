@@ -10,7 +10,7 @@ def main():
     screen = pg.display.set_mode((800, 600))
     clock = pg.time.Clock()
 
-    bg_img = pg.image.load("fig/pg_bg.jpg")
+    bg_img = pg.image("fig/pg_bg.jpg")
     bg_img2 = pg.transform.flip(bg_img, True, False)
 
     kk_img = pg.image.load("fig/3.png")
